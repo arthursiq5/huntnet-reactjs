@@ -5,7 +5,8 @@ import './styles.css';
 
 export default class Main extends Component{
     state = {
-        products: []
+        products: [],
+        productInfo: {}
     };
     
     componentDidMount(){
@@ -15,7 +16,9 @@ export default class Main extends Component{
     loadProducts = async () => {
         const response = await api.get('/products');
 
-        this.setState({products: response.data.docs});
+        const {docs, ...productInfo} = response.data;
+
+        this.setState({products: response.data.docs, productInfo});
     }
     
     render(){
