@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from './Header';
 import Main from './pages/main';
+import Routes from './routes';
 
 import './styles.css';
 
@@ -8,7 +9,7 @@ function App() {
   return (
     <div className="App">
       <Header/>
-      <Main/>
+      <Routes/>
     </div>
   );
 }
